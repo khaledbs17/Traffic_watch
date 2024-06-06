@@ -54,7 +54,8 @@ object RoadTraffic extends App {
         mean("travelTime").alias("meanTravelTime"),
         mean("travelTimeReliability").alias("meanTravelTimeReliability"),
         collect_list(col("trafficStatus")).as("trafficStatusList")
-      ).coalesce(1)
+      ).coalesce(1) 
+    // .coalesce(1) : to decrease the nmbre of partitions of the DF to 1
 
     return df.select(col("denomination"),col("datetime"),col("nbTroconPerRoad"),col("nbVehiculePerRoad"), col
     ("meanVitessePerRoad"), col("vitesseMaximumPerRoad"), col("meanTravelTime"), col("meanTravelTimeReliability"),
