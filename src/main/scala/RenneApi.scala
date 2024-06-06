@@ -39,7 +39,7 @@ object RenneApi extends App {
     }
   }, 0, duration.toMillis)
 
-  // Arrêter la planification après 6 minutes
+  // Arrêter la planification après n minutes
   Thread.sleep(15 * 60 * 1000)
   scheduler.cancel()
 
